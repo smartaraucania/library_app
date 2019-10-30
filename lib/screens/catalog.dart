@@ -4,13 +4,16 @@ import 'package:library_app/util/books_trend.dart';
 import 'package:library_app/widgets/slide_item_trend.dart';
 import 'package:library_app/widgets/slide_item_book.dart';
 import 'package:library_app/util/books.dart';
+import 'package:library_app/screens/trending.dart';
+import 'package:library_app/screens/category.dart';
 
 class Catalog extends StatefulWidget {
   @override
   _CatalogState createState() => _CatalogState();
 }
 
-class _CatalogState extends State<Catalog> with AutomaticKeepAliveClientMixin<Catalog> {
+class _CatalogState extends State<Catalog>
+    with AutomaticKeepAliveClientMixin<Catalog> {
   final TextEditingController _searchControl = new TextEditingController();
 
   @override
@@ -53,10 +56,6 @@ class _CatalogState extends State<Catalog> with AutomaticKeepAliveClientMixin<Ca
                     Icons.search,
                     color: Colors.black,
                   ),
-                  suffixIcon: Icon(
-                    Icons.filter_list,
-                    color: Colors.black,
-                  ),
                   hintStyle: TextStyle(
                     fontSize: 15.0,
                     color: Colors.black,
@@ -89,6 +88,25 @@ class _CatalogState extends State<Catalog> with AutomaticKeepAliveClientMixin<Ca
                     fontWeight: FontWeight.w800,
                   ),
                 ),
+                FlatButton(
+                  child: Text(
+                    "Ver todo (" + bookstrend.length.toString() + ")",
+                    style: TextStyle(
+                      //fontSize: 22,
+                      fontWeight: FontWeight.w800,
+                      color: Theme.of(context).accentColor,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return Trending();
+                        },
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
 
@@ -101,7 +119,7 @@ class _CatalogState extends State<Catalog> with AutomaticKeepAliveClientMixin<Ca
                 primary: false,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: bookstrend == null ? 0 : bookstrend.length,
+                itemCount: bookstrend == null ? 0 : 3,
                 itemBuilder: (BuildContext context, int index) {
                   Map book = bookstrend[index];
 
@@ -200,6 +218,18 @@ class _CatalogState extends State<Catalog> with AutomaticKeepAliveClientMixin<Ca
                               ),
                             ),
                           ),
+                          FlatButton(
+                            child: Text(""),
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return Category(name: cat["name"],books: cat["books"],);
+                                  },
+                                ),
+                              );
+                            },
+                          ),
                         ],
                       ),
                     ),
@@ -226,7 +256,7 @@ class _CatalogState extends State<Catalog> with AutomaticKeepAliveClientMixin<Ca
             SizedBox(height: 10.0),
 
             Container(
-              height: MediaQuery.of(context).size.height/2.4,
+              height: MediaQuery.of(context).size.height / 2.4,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                 primary: false,

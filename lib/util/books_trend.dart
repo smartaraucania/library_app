@@ -19,4 +19,9 @@ List bookstrend = [
     "title": "Carrie",
     "author": "King, Stephen",
   },
+  {
+    "img": "assets/book5.jpg",
+    "title": "Amigo Imaginario",
+    "author": "Chbosky, Stephen",
+  }
 ];

@@ -22,8 +22,8 @@ class _MainScreenState extends State<MainScreen> {
         controller: _pageController,
         onPageChanged: onPageChanged,
         children: <Widget>[
-          Home(),
           Catalog(),
+          Home(),
           Profile(),
         ],
       ),
@@ -38,10 +38,10 @@ class _MainScreenState extends State<MainScreen> {
                 Icons.home,
                 size: 24.0,
               ),
-              color: _page == 0
+              color: _page == 1
                   ? Theme.of(context).accentColor
                   : Theme.of(context).textTheme.caption.color,
-              onPressed: () => _pageController.jumpToPage(0),
+              onPressed: () => _pageController.jumpToPage(1),
             ),
             IconButton(
               icon: Icon(
@@ -49,10 +49,10 @@ class _MainScreenState extends State<MainScreen> {
                 size: 24.0,
                 color: Theme.of(context).primaryColor,
               ),
-              color: _page == 1
+              color: _page == 0
                   ? Theme.of(context).accentColor
                   : Theme.of(context).textTheme.caption.color,
-              onPressed: () => _pageController.jumpToPage(1),
+              onPressed: () => _pageController.jumpToPage(0),
             ),
             IconButton(
               icon: Icon(
@@ -77,7 +77,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Icon(
           Icons.book,
         ),
-        onPressed: () => _pageController.jumpToPage(1),
+        onPressed: () => _pageController.jumpToPage(0),
       ),
     );
   }
