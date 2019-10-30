@@ -83,6 +83,8 @@ class _TrendingState extends State<Trending> {
                   img: bookstrends["img"],
                   title: bookstrends["title"],
                   author: bookstrends["author"],
+                  year: bookstrends["year"],
+                  description: bookstrends["description"],
                 );
               },
             ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/screens/book_details.dart';
 
 class SlideItemBook extends StatefulWidget {
   final String imageLink;
   final String author;
   final String title;
   final int year;
+  final String description;
 
   SlideItemBook({
     Key key,
@@ -12,6 +14,7 @@ class SlideItemBook extends StatefulWidget {
     @required this.author,
     @required this.title,
     @required this.year,
+    @required this.description,
   }) : super(key: key);
 
   @override
@@ -24,8 +27,8 @@ class _SlideItemState extends State<SlideItemBook> {
     return Padding(
       padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: Container(
-        height: MediaQuery.of(context).size.height/2.4,
-        width: MediaQuery.of(context).size.width/2.4,
+        height: MediaQuery.of(context).size.height / 2.4,
+        width: MediaQuery.of(context).size.width / 2.4,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -35,7 +38,7 @@ class _SlideItemState extends State<SlideItemBook> {
               Stack(
                 children: <Widget>[
                   Container(
-                    height: MediaQuery.of(context).size.height/9,
+                    height: MediaQuery.of(context).size.height / 9,
                     width: MediaQuery.of(context).size.width,
                     child: ClipRRect(
                       borderRadius: BorderRadius.only(
@@ -47,6 +50,24 @@ class _SlideItemState extends State<SlideItemBook> {
                         fit: BoxFit.cover,
                       ),
                     ),
+                  ),
+                  FlatButton(
+                    child: Text(""),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return BookDetail(
+                              image: "${widget.imageLink}",
+                              title: "${widget.title}",
+                              author: "${widget.author}",
+                              year: "${widget.year}",
+                              description: "${widget.description}",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

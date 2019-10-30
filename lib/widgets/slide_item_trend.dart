@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/screens/book_details.dart';
 
 class SlideItemTrend extends StatefulWidget {
   final String img;
   final String title;
   final String author;
+  final String year;
+  final String description;
 
   SlideItemTrend({
     Key key,
     @required this.img,
     @required this.title,
     @required this.author,
+    @required this.year,
+    @required this.description,
   }) : super(key: key);
 
   @override
@@ -55,7 +60,7 @@ class _SlideItemState extends State<SlideItemTrend> {
                       child: Padding(
                         padding: EdgeInsets.all(4.0),
                         child: Text(
-                          " Disponible ",
+                          "Ver Detalle",
                           style: TextStyle(
                             fontSize: 10,
                             color: Colors.green,
@@ -64,6 +69,24 @@ class _SlideItemState extends State<SlideItemTrend> {
                         ),
                       ),
                     ),
+                  ),
+                  FlatButton(
+                    child: Text(""),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return BookDetail(
+                              image: "${widget.img}",
+                              title: "${widget.title}",
+                              author: "${widget.author}",
+                              year: "${widget.year}",
+                              description: "${widget.description}",
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

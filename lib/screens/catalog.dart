@@ -129,6 +129,8 @@ class _CatalogState extends State<Catalog>
                       img: book["img"],
                       title: book["title"],
                       author: book["author"],
+                      year: book["year"],
+                      description: book["description"],
                     ),
                   );
                 },
@@ -224,7 +226,10 @@ class _CatalogState extends State<Catalog>
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (BuildContext context) {
-                                    return Category(name: cat["name"],books: cat["books"],);
+                                    return Category(
+                                      name: cat["name"],
+                                      books: cat["books"],
+                                    );
                                   },
                                 ),
                               );
@@ -273,6 +278,7 @@ class _CatalogState extends State<Catalog>
                       title: book["title"],
                       author: book["author"],
                       year: book["year"],
+                      description: book["description"],
                     ),
                   );
                 },
