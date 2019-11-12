@@ -1,7 +1,7 @@
-import 'dart:ui';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
-class BookDetail extends StatefulWidget {
+class BookDetail extends StatelessWidget {
   final String title;
   final String author;
   final String year;
@@ -17,24 +17,114 @@ class BookDetail extends StatefulWidget {
     @required this.description,
   }) : super(key: key);
 
-  @override 
-  _BookDetailState createState() => _BookDetailState();
-}
+  Widget _buildContent(size) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          _buildAvatar(size),
+          _buildInfo(size),
+        ],
+      ),
+    );
+  }
 
-class _BookDetailState extends State<BookDetail>{
+  Widget _buildAvatar(size) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.red,
+        image: DecorationImage(
+            image: AssetImage("${this.image}"), fit: BoxFit.cover),
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(color: Colors.white30),
+      ),
+      margin: const EdgeInsets.only(top: 32.0, left: 16.0),
+      padding: const EdgeInsets.all(3.0),
+      width: size.width / 1.3,
+      height: size.height / 1.5,
+    );
+  }
+
+  Widget _buildInfo(size) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            this.title,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 30.0,
+            ),
+          ),
+          Text(
+            this.author,
+            style: TextStyle(
+              color: Colors.black54,
+              fontWeight: FontWeight.bold,
+              fontSize: 26.0,
+            ),
+          ),
+          Text(
+            this.year,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          Container(
+            color: Colors.black87,
+            margin: const EdgeInsets.symmetric(vertical: 16.0),
+            width: size.width / 1.1,
+            height: 1.0,
+          ),
+          Text(
+            this.description,
+            style: TextStyle(
+              color: Colors.black,
+              height: 1.4,
+            ),
+          ),
+          Container(
+            color: Colors.black87,
+            margin: const EdgeInsets.symmetric(vertical: 16.0),
+            width: size.width / 1.1,
+            height: 1.0,
+          ),
+          
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
-          Container(
-            decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+          // Image.asset(artist.backdropPhoto, fit: BoxFit.cover),
+          BackdropFilter(
+            filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+            child: Container(
+              color: Colors.white,
+              child: _buildContent(MediaQuery.of(context).size),
+            ),
           ),
-          buildBookInfo(MediaQuery.of(context).size),
           Positioned(
             child: AppBar(
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.white,
               elevation: 0,
+              title: Text(
+                this.title,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
             height: 60,
             width: MediaQuery.of(context).size.width,
@@ -43,108 +133,4 @@ class _BookDetailState extends State<BookDetail>{
       ),
     );
   }
-
-  Widget buildBookInfo(Size size) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 60, 20, 20),
-      child: Column(
-        children: <Widget>[
-          Expanded(
-            flex: 25,
-            child: buildImage(size),
-          ),
-          //SizedBox(height: 0.0),
-          Expanded(
-            flex: 0,
-            child: buildTitleRow(),
-          ),
-          Expanded(
-            child: buildAuthorYearRow(),
-            flex: 0,
-          ),
-          Expanded(
-            child: buildDescriptionRow(),
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget buildImage(Size size) {
-    return Container(
-      width: size.width / 1.1,
-      height: size.height / 1.1,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(0),
-        child: Column(children: <Widget>[
-          Container(
-            width: size.width / 1.3,
-            height: size.height / 1.5,
-            decoration: BoxDecoration(
-                color: Colors.red,
-                image: DecorationImage(
-                    image: AssetImage("${widget.image}"), fit: BoxFit.cover),
-                borderRadius: BorderRadius.circular(30)),
-          ),
-        ]),
-      ),
-    );
-  }
-
-  Widget buildTitleRow() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: Text(
-            "${widget.title}",
-            style: MyTextStyle().titles,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget buildAuthorYearRow() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: Text(
-            "${this.widget}" + " - ${widget.year}",
-            style: MyTextStyle().normalText,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget buildDescriptionRow() {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: Text(
-            "${widget.description}",
-            style: MyTextStyle().normalText,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class MyTextStyle extends TextStyle {
-  final TextStyle normalText = TextStyle(
-    fontSize: 16,
-    color: Colors.black87,
-    fontFamily: 'Arvo',
-  );
-
-  final TextStyle titles = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 20,
-    color: Colors.black87,
-    fontFamily: 'Arvo',
-  );
 }
