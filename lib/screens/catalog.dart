@@ -126,12 +126,12 @@ class _CatalogState extends State<Catalog>
                   return Padding(
                     padding: EdgeInsets.only(right: 10.0),
                     child: SlideItemTrend(
-                      img: book["img"],
-                      title: book["title"],
-                      author: book["author"],
-                      year: book["year"],
-                      description: book["description"],
-                    ),
+                        img: book["img"],
+                        title: book["title"],
+                        author: book["author"],
+                        year: book["year"],
+                        description: book["description"],
+                        availability: book["availability"]),
                   );
                 },
               ),
@@ -171,71 +171,70 @@ class _CatalogState extends State<Catalog>
                     padding: EdgeInsets.only(right: 10.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
-                      child: Stack(
-                        children: <Widget>[
-                          Image.asset(
-                            cat["img"],
-                            height: MediaQuery.of(context).size.height / 6,
-                            width: MediaQuery.of(context).size.height / 6,
-                            fit: BoxFit.cover,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                // Add one stop for each color. Stops should increase from 0 to 1
-                                stops: [0.2, 0.7],
-                                colors: [
-                                  cat['color1'],
-                                  cat['color2'],
-                                ],
-                              ),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return Category(
+                                  name: cat["name"],
+                                  books: cat["books"],
+                                );
+                              },
                             ),
-                            height: MediaQuery.of(context).size.height / 6,
-                            width: MediaQuery.of(context).size.height / 6,
-                          ),
-                          Center(
-                            child: Container(
+                          );
+                        },
+                        child: Stack(
+                          children: <Widget>[
+                            Image.asset(
+                              cat["img"],
                               height: MediaQuery.of(context).size.height / 6,
                               width: MediaQuery.of(context).size.height / 6,
-                              padding: EdgeInsets.all(1),
-                              constraints: BoxConstraints(
-                                minWidth: 20,
-                                minHeight: 20,
+                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  // Add one stop for each color. Stops should increase from 0 to 1
+                                  stops: [0.2, 0.7],
+                                  colors: [
+                                    cat['color1'],
+                                    cat['color2'],
+                                  ],
+                                ),
                               ),
-                              child: Center(
-                                child: Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text(
-                                    cat["name"],
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
+                              height: MediaQuery.of(context).size.height / 6,
+                              width: MediaQuery.of(context).size.height / 6,
+                            ),
+                            Center(
+                              child: Container(
+                                height: MediaQuery.of(context).size.height / 6,
+                                width: MediaQuery.of(context).size.height / 6,
+                                padding: EdgeInsets.all(1),
+                                constraints: BoxConstraints(
+                                  minWidth: 20,
+                                  minHeight: 20,
+                                ),
+                                child: Center(
+                                  child: Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Text(
+                                      cat["name"],
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      textAlign: TextAlign.center,
                                     ),
-                                    textAlign: TextAlign.center,
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          FlatButton(
-                            child: Text(""),
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) {
-                                    return Category(
-                                      name: cat["name"],
-                                      books: cat["books"],
-                                    );
-                                  },
-                                ),
-                              );
-                            },
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   );
@@ -274,12 +273,12 @@ class _CatalogState extends State<Catalog>
                   return Padding(
                     padding: EdgeInsets.only(right: 10.0),
                     child: SlideItemBook(
-                      imageLink: book["imageLink"],
-                      title: book["title"],
-                      author: book["author"],
-                      year: book["year"],
-                      description: book["description"],
-                    ),
+                        imageLink: book["imageLink"],
+                        title: book["title"],
+                        author: book["author"],
+                        year: book["year"],
+                        description: book["description"],
+                        availability: book["availability"]),
                   );
                 },
               ),

@@ -85,10 +85,12 @@ class _CategoryState extends State<Category> {
                 Map books = widget.books[index];
 
                 return CategoryItem(
-                  img: books["imageLink"],
-                  title: books["title"],
-                  author: books["author"],
-                );
+                    img: books["imageLink"],
+                    title: books["title"],
+                    author: books["author"],
+                    year: books["year"],
+                    description: books["description"],
+                    availability: books["availability"]);
               },
             ),
             SizedBox(height: 10.0),

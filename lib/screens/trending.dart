@@ -80,12 +80,12 @@ class _TrendingState extends State<Trending> {
                 Map bookstrends = bookstrend[index];
 
                 return TrendingItem(
-                  img: bookstrends["img"],
-                  title: bookstrends["title"],
-                  author: bookstrends["author"],
-                  year: bookstrends["year"],
-                  description: bookstrends["description"],
-                );
+                    img: bookstrends["img"],
+                    title: bookstrends["title"],
+                    author: bookstrends["author"],
+                    year: bookstrends["year"],
+                    description: bookstrends["description"],
+                    availability: bookstrends["availability"]);
               },
             ),
             SizedBox(height: 10.0),

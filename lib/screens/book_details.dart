@@ -7,6 +7,7 @@ class BookDetail extends StatelessWidget {
   final String year;
   final String image;
   final String description;
+  final String availability;
 
   const BookDetail({
     Key key,
@@ -15,6 +16,7 @@ class BookDetail extends StatelessWidget {
     @required this.year,
     @required this.author,
     @required this.description,
+    @required this.availability,
   }) : super(key: key);
 
   Widget _buildContent(size) {
@@ -94,7 +96,13 @@ class BookDetail extends StatelessWidget {
             width: size.width / 1.1,
             height: 1.0,
           ),
-          
+          Text(
+            this.availability,
+            style: TextStyle(
+              color: Colors.black,
+              height: 1.4,
+            ),
+          ),
         ],
       ),
     );
