@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/util/books_trend.dart';
-import 'package:library_app/widgets/trending_item.dart';
+import 'package:library_app/util/catalog/books_trend.dart';
+import 'package:library_app/widgets/catalog/trending_item.dart';
 
 class Trending extends StatefulWidget {
   @override

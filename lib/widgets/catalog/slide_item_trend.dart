@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/screens/book_details.dart';
+import 'package:library_app/screens/catalog/book_details.dart';
 
-class CategoryItem extends StatefulWidget {
+class SlideItemTrend extends StatefulWidget {
   final String img;
   final String title;
   final String author;
-  final int year;
+  final String year;
   final String description;
   final String availability;
 
-  CategoryItem({
+  SlideItemTrend({
     Key key,
     @required this.img,
     @required this.title,
@@ -20,17 +20,17 @@ class CategoryItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CategoryItemState createState() => _CategoryItemState();
+  _SlideItemState createState() => _SlideItemState();
 }
 
-class _CategoryItemState extends State<CategoryItem> {
+class _SlideItemState extends State<SlideItemTrend> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: Container(
-        height: MediaQuery.of(context).size.height / 2.2,
-        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height / 2.9,
+        width: MediaQuery.of(context).size.width / 1.2,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -56,7 +56,7 @@ class _CategoryItemState extends State<CategoryItem> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      height: MediaQuery.of(context).size.height / 3.5,
+                      height: MediaQuery.of(context).size.height / 3.7,
                       width: MediaQuery.of(context).size.width,
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(

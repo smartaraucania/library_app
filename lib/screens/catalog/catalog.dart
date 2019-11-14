@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/util/categories.dart';
-import 'package:library_app/util/books_trend.dart';
-import 'package:library_app/widgets/slide_item_trend.dart';
-import 'package:library_app/widgets/slide_item_book.dart';
-import 'package:library_app/util/books.dart';
-import 'package:library_app/screens/trending.dart';
-import 'package:library_app/screens/category.dart';
+import 'package:library_app/util/catalog/categories.dart';
+import 'package:library_app/util/catalog/books_trend.dart';
+import 'package:library_app/widgets/catalog/slide_item_trend.dart';
+import 'package:library_app/widgets/catalog/slide_item_book.dart';
+import 'package:library_app/util/catalog/books.dart';
+import 'package:library_app/screens/catalog/trending.dart';
+import 'package:library_app/screens/catalog/category.dart';
 
 class Catalog extends StatefulWidget {
   @override

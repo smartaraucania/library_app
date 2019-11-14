@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/widgets/category_item.dart';
+import 'package:library_app/widgets/catalog/category_item.dart';
 
 class Category extends StatefulWidget {
   final String name;

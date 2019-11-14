@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/util/books.dart';
+import 'package:library_app/util/catalog/books.dart';
 
 List categories = [
   {

@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/screens/book_details.dart';
+import 'package:library_app/screens/catalog/book_details.dart';
 
-class SlideItemBook extends StatefulWidget {
-  final String imageLink;
-  final String author;
+class TrendingItem extends StatefulWidget {
+  final String img;
   final String title;
-  final int year;
+  final String author;
+  final String year;
   final String description;
   final String availability;
 
-  SlideItemBook({
+  TrendingItem({
     Key key,
-    @required this.imageLink,
-    @required this.author,
+    @required this.img,
     @required this.title,
+    @required this.author,
     @required this.year,
     @required this.description,
     @required this.availability,
   }) : super(key: key);
 
   @override
-  _SlideItemState createState() => _SlideItemState();
+  _TrendingItemState createState() => _TrendingItemState();
 }
 
-class _SlideItemState extends State<SlideItemBook> {
+class _TrendingItemState extends State<TrendingItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
       child: Container(
         height: MediaQuery.of(context).size.height / 2.4,
-        width: MediaQuery.of(context).size.width / 2.4,
+        width: MediaQuery.of(context).size.width,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -41,7 +41,7 @@ class _SlideItemState extends State<SlideItemBook> {
                 MaterialPageRoute(
                   builder: (BuildContext context) {
                     return BookDetail(
-                        image: "${widget.imageLink}",
+                        image: "${widget.img}",
                         title: "${widget.title}",
                         author: "${widget.author}",
                         year: "${widget.year}",
@@ -56,7 +56,7 @@ class _SlideItemState extends State<SlideItemBook> {
                 Stack(
                   children: <Widget>[
                     Container(
-                      height: MediaQuery.of(context).size.height / 9,
+                      height: MediaQuery.of(context).size.height / 3.5,
                       width: MediaQuery.of(context).size.width,
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
@@ -64,7 +64,7 @@ class _SlideItemState extends State<SlideItemBook> {
                           topRight: Radius.circular(10),
                         ),
                         child: Image.asset(
-                          "${widget.imageLink}",
+                          "${widget.img}",
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -92,7 +92,7 @@ class _SlideItemState extends State<SlideItemBook> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Text(
-                      "${widget.author}" + " - ${widget.year}",
+                      "${widget.author}",
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w300,
