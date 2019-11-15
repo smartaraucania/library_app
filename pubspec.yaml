@@ -86,6 +86,7 @@ flutter:
    - assets/home2.jpg
    - assets/home3.jpg
    - assets/home4.jpg
+   - assets/logo.jpg
 
   # An image assetscan refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

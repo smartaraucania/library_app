@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:library_app/screens/main_screen.dart';
 import 'package:library_app/util/const.dart';
+import 'package:library_app/screens/auth/auth.dart';
 
 void main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: Constants.appName,
       theme: isDark ? Constants.darkTheme : Constants.lightTheme,
-      home: MainScreen(),
+      home: Auth(),
     );
   }
 }

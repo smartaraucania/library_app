@@ -34,7 +34,7 @@ class _CategoryItemState extends State<CategoryItem> {
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          elevation: 3.0,
+          elevation: 2.0,
           child: InkWell(
             onTap: () {
               Navigator.of(context).push(
