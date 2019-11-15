@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/screens/home.dart';
+import 'package:library_app/screens/home/home.dart';
 import 'package:library_app/screens/catalog/catalog.dart';
-import 'package:library_app/screens/profile.dart';
+import 'package:library_app/screens/profile/profile.dart';
 
 
 //clase inicial que contiene navegación

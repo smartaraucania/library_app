@@ -14,7 +14,7 @@ class _ProfileState extends State<Profile> {
           ClipPath(
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.white,
                   image: DecorationImage(
                       image: AssetImage("assets/c25.jpeg"), fit: BoxFit.cover),
                   boxShadow: [
@@ -32,7 +32,7 @@ class _ProfileState extends State<Profile> {
                   width: 150.0,
                   height: 150.0,
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Colors.white,
                       image: DecorationImage(
                           image: AssetImage("assets/cm4.jpeg"),
                           fit: BoxFit.cover),
