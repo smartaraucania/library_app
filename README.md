@@ -2,33 +2,25 @@
 
 Proyecto Flutter.
 
-## Proyecto Librerias p鷅licas
+## Proyecto Librerias p煤blicas
 
-El presente proyecto aborda la necesidad de generar una aplicaci髇 m髒il, que permita la visualizaci髇 de los libros disponibles en la actualidad en las diferentes bibliotecas involucradas en el proyecto. Adem醩, de permitir solicitar la prestaci髇 de un libro de manera remota.
+El presente proyecto aborda la necesidad de generar una aplicaci贸n m贸vil, que permita la visualizaci贸n de los libros disponibles en la actualidad en las diferentes bibliotecas involucradas en el proyecto. Adem谩s, de permitir solicitar la prestaci贸n de un libro de manera remota.
 
-#El alcance actual de este proyecto aborda la UI (user interface) de la aplicaci髇 m髒il a utilizar.
+*El alcance actual de este proyecto aborda la UI (user interface) de la aplicaci贸n m贸vil a utilizar.*
 
-##Interfaz
+## Interfaz
 
- 
-
-
-
-
-
-
-
-
-
-
+<img src="images/image_1.jpeg" width=200 >      <img src="images/image_2.jpeg" width=200 >      <img src="images/image_3.jpeg" width=200 >
+<img src="images/image_4.jpeg" width=200 >      <img src="images/image_5.jpeg" width=200 >      <img src="images/image_6.jpeg" width=200 >
+<img src="images/image_7.jpeg" width=200 >
 
 ## Como comenzar
 
 Algunos recursos para comenzar si no sabe manejar Flutter:
 
-- [Laboratorio: Escribe tu primera aplicaci髇 Flutter] (https://flutter.dev/docs/get-started/codelab)
-- [Libro de muestra: muestras 鷗iles de Flutter] (https://flutter.dev/docs/cookbook)
+- [Laboratorio: Escribe tu primera aplicaci贸n Flutter] (https://flutter.dev/docs/get-started/codelab)
+- [Libro de muestra: muestras 煤tiles de Flutter] (https://flutter.dev/docs/cookbook)
 
 Para obtener ayuda para comenzar a usar Flutter, vea la
-documentaci髇 en l韓ea (https://flutter.dev/docs), que ofrece tutoriales, ejemplos, orientaci髇 sobre desarrollo m髒il y una referencia API completa.
+documentaci贸n en l铆nea (https://flutter.dev/docs), que ofrece tutoriales, ejemplos, orientaci贸n sobre desarrollo m贸vil y una referencia API completa.
 "# library_app" 
